@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Raising MVPs — Gear, Apps & Resources for Sports Families</title>
+  <meta name="description" content="Raising MVPs is a hub for sports families — find our favorite Amazon gear picks, stat-tracking app, sign-up sheets, and more." />
+  <link rel="canonical" href="https://www.raisingmvps.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.raisingmvps.com/" />
+  <meta property="og:title" content="Raising MVPs — Gear, Apps & Resources for Sports Families" />
+  <meta property="og:description" content="Find our favorite Amazon gear picks, stat-tracking app, sign-up sheet tool, and follow us on Instagram." />
+  <meta property="og:image" content="https://www.raisingmvps.com/logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Raising MVPs" />
+  <meta name="twitter:description" content="Gear, apps, and tools for the sports family." />
+  <meta name="twitter:image" content="https://www.raisingmvps.com/logo.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:        #1a8a95;
+      --teal-light:  #23a9b8;
+      --teal-dark:   #146e78;
+      --orange:      #e07a2f;
+      --orange-light:#f0943d;
+      --green:       #5ab03e;
+      --cream:       #f5ede0;
+      --cream-dark:  #ede0cc;
+      --bg:          #faf5ee;
+      --bg2:         #f5ede0;
+      --bg3:         #ede0cc;
+      --border:      #d9c9b0;
+      --text:        #2a2015;
+      --muted:       #7a6852;
+      --radius:      16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .heading {
+      font-family: 'Space Grotesk', sans-serif;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 245, 238, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--teal-dark);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .nav-logo-text span { color: var(--orange); }
+    .nav-links { display: flex; align-items: center; gap: 8px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--teal);
+      color: #fff;
+    }
+    .btn-primary:hover { background: var(--teal-light); transform: translateY(-1px); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--muted);
+    }
+    .btn-ghost:hover { color: var(--text); }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 80px 0 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -160px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(26,138,149,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-logo {
+      width: 130px;
+      height: 130px;
+      border-radius: 28px;
+      object-fit: cover;
+      margin: 0 auto 28px;
+      box-shadow: 0 12px 40px rgba(26,138,149,0.18);
+    }
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 64px);
+      font-weight: 800;
+      color: var(--teal-dark);
+      margin-bottom: 16px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--orange);
+    }
+    .hero p {
+      font-size: clamp(16px, 2.2vw, 19px);
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 16px;
+    }
+    .hero-sports {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .sport-pip {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 5px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    /* ── LINKS SECTION ── */
+    .links-section {
+      padding: 48px 0 80px;
+    }
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .link-card {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 28px 24px;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .link-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+    .link-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(26,138,149,0.12);
+    }
+
+    .link-card.amazon::before  { background: linear-gradient(90deg, #e07a2f, #f0943d); }
+    .link-card.sideline::before { background: linear-gradient(90deg, #1a8a95, #23a9b8); }
+    .link-card.buttercup::before { background: linear-gradient(90deg, #f0b429, #f7cc5f); }
+    .link-card.instagram::before { background: linear-gradient(90deg, #c13584, #e1306c, #fd1d1d, #f56040, #ffdc80); }
+
+    .link-card.amazon:hover  { border-color: var(--orange); }
+    .link-card.sideline:hover { border-color: var(--teal); }
+    .link-card.buttercup:hover { border-color: #f0b429; }
+    .link-card.instagram:hover { border-color: #e1306c; }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+    .amazon  .card-icon { background: #fff4e8; }
+    .sideline .card-icon { background: #e8f7f9; }
+    .buttercup .card-icon { background: #fffbe8; }
+    .instagram .card-icon { background: #fde8f0; }
+
+    .link-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .link-card p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+    .card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      padding: 9px 18px;
+      transition: all 0.15s ease;
+      align-self: flex-start;
+      color: #fff;
+    }
+    .amazon   .card-cta { background: var(--orange); }
+    .amazon   .card-cta:hover { background: var(--orange-light); }
+    .sideline .card-cta { background: var(--teal); }
+    .sideline .card-cta:hover { background: var(--teal-light); }
+    .buttercup .card-cta { background: #e0a020; }
+    .buttercup .card-cta:hover { background: #f0b429; }
+    .instagram .card-cta { background: linear-gradient(135deg, #c13584, #e1306c); }
+    .instagram .card-cta:hover { opacity: 0.9; }
+
+    .card-arrow { font-size: 16px; transition: transform 0.15s; }
+    .link-card:hover .card-arrow { transform: translateX(3px); }
+
+    /* ── TAGLINE STRIP ── */
+    .tagline-strip {
+      background: var(--teal-dark);
+      color: #fff;
+      text-align: center;
+      padding: 40px 24px;
+    }
+    .tagline-strip h2 {
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .tagline-strip p {
+      font-size: 15px;
+      opacity: 0.75;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 36px 0;
+      background: var(--bg2);
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--teal-dark);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-logo img {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 14px; color: var(--muted); transition: color 0.15s; }
+    .footer-links a:hover { color: var(--text); }
+    .footer-copy { font-size: 13px; color: var(--muted); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .hero { padding: 56px 0 48px; }
+      .hero-logo { width: 100px; height: 100px; }
+      .nav-logo-text { display: none; }
+      .links-grid { grid-template-columns: 1fr; }
+      footer .footer-copy { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <img src="logo.png" alt="Raising MVPs logo" />
+        <span class="nav-logo-text">Raising <span>MVPs</span></span>
+      </div>
+      <div class="nav-links">
+        <a href="#links" class="btn btn-primary">Explore →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="container">
+      <img src="logo.png" alt="Raising MVPs" class="hero-logo" />
+      <h1>Raising <em>MVPs</em></h1>
+      <p>For the parents packing the bags, planning the snacks, and cheering the loudest. We've got your back on and off the sideline.</p>
+      <div class="hero-sports">
+        <span class="sport-pip">⚽ Soccer</span>
+        <span class="sport-pip">🏀 Basketball</span>
+        <span class="sport-pip">🎾 Tennis</span>
+        <span class="sport-pip">🥍 Lacrosse</span>
+        <span class="sport-pip">⚾ Baseball</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LINKS -->
+  <section class="links-section" id="links">
+    <div class="container">
+      <div class="links-grid">
+
+        <!-- Amazon -->
+        <a href="https://www.amazon.com/shop/raising.mvps/ref=al_desktop_flex_title_bar?ccs_id=6dc28305-5eff-47ed-af4a-a3a1cb635143" target="_blank" rel="noopener" class="link-card amazon">
+          <div class="card-icon">🛒</div>
+          <h3>Amazon Picks</h3>
+          <p>My favorite sports gear, training equipment, and sideline essentials — all in one place. Gear I actually use and recommend for youth athletes.</p>
+          <span class="card-cta">Shop the list <span class="card-arrow">→</span></span>
+        </a>
+
+        <!-- MVP Sideline -->
+        <a href="https://www.mvpsideline.com" target="_blank" rel="noopener" class="link-card sideline">
+          <div class="card-icon">⚡</div>
+          <h3>MVP Sideline App</h3>
+          <p>Track stats for your youth sports teams — game by game, player by player. Built for coaches, managers, and sports parents. Free on web and iOS.</p>
+          <span class="card-cta">Visit MVP Sideline <span class="card-arrow">→</span></span>
+        </a>
+
+        <!-- Sign Me Up Buttercup -->
+        <a href="https://www.signmeupbuttercup.com" target="_blank" rel="noopener" class="link-card buttercup">
+          <div class="card-icon">🌼</div>
+          <h3>Sign Me Up Buttercup</h3>
+          <p>Beautiful, free sign-up sheets for team potlucks, RSVP events, volunteer shifts, and supplies lists. Share a link — no account needed for guests.</p>
+          <span class="card-cta">Visit Buttercup <span class="card-arrow">→</span></span>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://instagram.com/raising.mvps" target="_blank" rel="noopener" class="link-card instagram">
+          <div class="card-icon">📸</div>
+          <h3>Follow on Instagram</h3>
+          <p>Behind-the-scenes, gear finds, parenting wins, and everything in between. Follow along for the journey of raising young athletes.</p>
+          <span class="card-cta">Follow @raising.mvps <span class="card-arrow">→</span></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TAGLINE STRIP -->
+  <div class="tagline-strip">
+    <h2>Behind every great athlete is a parent who showed up.</h2>
+    <p>The gear, the apps, and the tools — everything to make your sideline life a little smoother this season.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img src="logo.png" alt="Raising MVPs" />
+          Raising MVPs
+        </div>
+        <div class="footer-links">
+          <a href="https://www.mvpsideline.com" target="_blank" rel="noopener">MVP Sideline</a>
+          <a href="https://www.signmeupbuttercup.com" target="_blank" rel="noopener">Sign Me Up Buttercup</a>
+          <a href="https://instagram.com/raising.mvps" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <div class="footer-copy">© 2026 Raising MVPs. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
